@@ -1,0 +1,26 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="app-content pt-3 p-md-3 p-lg-4">
+	<div class="container-xl">
+		<h1 class="app-page-title">Edit Product</h1>
+		<hr class="mb-4">
+		<div class="row g-4 settings-section">
+			<div class="col-12 col-md-8">
+				<div class="app-card app-card-settings shadow-sm p-4">
+					<div class="app-card-body">
+						<form class="settings-form" method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						{{form.as_p}}
+							<button type="submit" class="btn w-100 app-btn-primary">Update product</button>
+						</form>
+					</div><!--//app-card-body-->
+
+				</div><!--//app-card-->
+			</div>
+		</div><!--//row-->
+	</div><!--//container-fluid-->
+</div><!--//app-content-->
+
+{% endblock main %}
